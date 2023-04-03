@@ -33,6 +33,13 @@ public class AdventureLogic {
         return adventureName;
     }
 
+//    public String addAdventureAndReturnName(String fileName) throws IOException {
+//        Adventure adventure = getAdventureFromFile(fileName);
+//        String adventureName = adventure.getQuestName();
+//        AdventureStorage.getAdventures().put(adventureName, adventure);
+//        return adventureName;
+//    }
+
     public String getTaskTextById(String adventureName, int answerId) {
         Optional<Task> task = getTask(adventureName, answerId);
         if (task.isPresent()) {

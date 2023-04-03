@@ -36,7 +36,10 @@ public class AdventureController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+
         String playerName = request.getParameter("playerName");
+        if (playerName == null || playerName.isEmpty()) {
+        }
         Player player;
 
         if (!adventureLogic.isPlayerExists(playerName)) {
@@ -49,20 +52,20 @@ public class AdventureController extends HttpServlet {
         }
 
         try {
-            int nextQuestionId = Integer.parseInt(request.getParameter("nextQuestionId"));
+            int nextTaskId = Integer.parseInt(request.getParameter("nextTaskId"));
             boolean isLastQuestion = Boolean.parseBoolean(request.getParameter("isLastQuestion"));
-            boolean isWrongAnswer = checkNegativeNumber(nextQuestionId);
-            String questionText = adventureLogic.getTaskTextById(adventureName, nextQuestionId);
+            boolean isWrongAnswer = checkNegativeNumber(nextTaskId);
+            String questionText = adventureLogic.getTaskTextById(adventureName, nextTaskId);
 
-            log.info(player.toString() + ", nextQuestionId = " + nextQuestionId + ", isLastQuestion = " + isLastQuestion +
+            log.info(player.toString() + ", nextTaskId = " + nextTaskId + ", isLastQuestion = " + isLastQuestion +
                     ", isWrongAnswer = " + isWrongAnswer + ", questionText = " + questionText);
 
             if (!isLastQuestion && !isWrongAnswer){
-                List<AdventureAnswer> answersByQuestion = adventureLogic.getAnswersByTaskId(adventureName, nextQuestionId);
-                isLastQuestion = adventureLogic.isLastTaskById(adventureName, nextQuestionId);
+                List<AdventureAnswer> answersByQuestion = adventureLogic.getAnswersByTaskId(adventureName, nextTaskId);
+                isLastQuestion = adventureLogic.isLastTaskById(adventureName, nextTaskId);
                 request.setAttribute("questionText", questionText);
                 request.setAttribute("answers", answersByQuestion);
-                request.setAttribute("nextQuestionId", nextQuestionId);
+                request.setAttribute("nextQuestionId", nextTaskId);
                 request.setAttribute("isLastQuestion", isLastQuestion);
                 request.setAttribute("playerName", player.getPlayerName());
                 request.setAttribute("gamesPlayed", player.getGamesPlayed());
