@@ -1,0 +1,84 @@
+{
+  "questName": "space",
+  "questions": [
+    {
+      "questionId": 0,
+      "text": "You have lost your memory. Accept the UFO's challenge?",
+      "lastQuestion": false,
+      "answers": [
+        {
+          "answerId": 1,
+          "text": "Accept the challenge",
+          "nextTaskId": 1
+        },
+        {
+          "answerId": 2,
+          "text": "Decline the challenge",
+          "nextTaskId": -1
+        }
+      ]
+    },
+    {
+      "questionId": 1,
+      "text": "You have accepted the challenge. Do you go to the bridge to meet the captain?",
+      "lastQuestion": false,
+      "answers": [
+        {
+          "answerId": 1,
+          "text": "Go to the bridge",
+          "nextTaskId": 2
+        },
+        {
+          "answerId": 2,
+          "text": "Refuse to go to the bridge",
+          "nextTaskId": -2
+        }
+      ]
+    },
+    {
+      "questionId": 2,
+      "text": "You have arrived at the bridge. Who are you?",
+      "lastQuestion": true,
+      "answers": [
+        {
+          "answerId": 1,
+          "text": "Tell the truth about yourself",
+          "nextTaskId": 3
+        },
+        {
+          "answerId": 2,
+          "text": "Lie about yourself",
+          "nextTaskId": -3
+        }
+      ]
+    },
+    {
+      "questionId": 3,
+      "text": "You have been returned home. Victory!",
+      "lastQuestion": null,
+      "answers": []
+    },
+    {
+      "questionId": -1,
+      "text": "You have declined the challenge. Defeat!",
+      "lastQuestion": null,
+      "answers": []
+    },
+    {
+      "questionId": -2,
+      "text": "You have refused to go to the negotiations. Defeat!",
+      "lastQuestion": null,
+      "answers": []
+    },
+    {
+      "questionId": -3,
+      "text": "Your lie was exposed. Defeat!",
+      "lastQuestion": null,
+      "answers": []
+    }
+  ]
+}
+
+
+
+
