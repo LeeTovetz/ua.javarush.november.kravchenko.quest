@@ -14,3 +14,11 @@ Write a small text quest. The question in each subsequent step depends on the pr
 - The logic should be covered by tests. Use JUnit. Coverage > 95%.<br>
 - Add a welcome page in which to write a welcome text telling the backstory to this text quest game.<br>
 ##
+
+![alt text](https://github.com/LeeTovetz/ua.javarush.november.kravchenko.quest/blob/november/screens/screen1.png)
+
+![alt text](https://github.com/LeeTovetz/ua.javarush.november.kravchenko.quest/blob/november/screens/screen2.png)
+
+![alt text](https://github.com/LeeTovetz/ua.javarush.november.kravchenko.quest/blob/november/screens/screen3.png)
+
+![alt text](https://github.com/LeeTovetz/ua.javarush.november.kravchenko.quest/blob/november/screens/screen4.png)
